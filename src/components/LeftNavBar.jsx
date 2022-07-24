@@ -6,6 +6,8 @@ import { FaUser } from "react-icons/fa";
 
 import { Container, Row, Col } from "react-bootstrap";
 
+import { NavLink } from "react-router-dom";
+
 const LeftNavBar = () => {
   return (
     <Wrapper>
@@ -14,12 +16,23 @@ const LeftNavBar = () => {
           <Row>
             <Col xs={12} sm={3} className='nav-bg p-0'>
               <div className='text-center'>
-                <div className='nav-icon'>
-                  <span>Home</span> <AiFillHome />
-                </div>
-                <div className='nav-icon'>
-                  <span>Camera</span> <BsCameraReelsFill />
-                </div>
+                <NavLink
+                  to='/'
+                  exact
+                  className={(isActive) => `${isActive ? "active" : null}`}
+                >
+                  <div className='nav-icon'>
+                    <span>Home</span> <AiFillHome />
+                  </div>
+                </NavLink>
+                <NavLink
+                  to='about'
+                  className={(isActive) => `${isActive ? "active" : null}`}
+                >
+                  <div className='nav-icon'>
+                    <span>Camera</span> <BsCameraReelsFill />
+                  </div>
+                </NavLink>
                 <div className='nav-icon'>
                   <span>Sound</span> <AiFillSound />
                 </div>
@@ -36,6 +49,9 @@ const LeftNavBar = () => {
 };
 
 const Wrapper = styled.div`
+  a {
+    text-decoration: none;
+  }
   .sidebar-nav {
     .nav-bg {
       height: 100vh;
@@ -49,7 +65,7 @@ const Wrapper = styled.div`
     font-size: 2rem;
     margin: 1rem 0;
     padding: 0.5rem;
-    color: var(--primary-white);
+    color: var(--primary-black);
     transition: background-color 1s ease;
     span {
       font-size: 0;
@@ -59,7 +75,7 @@ const Wrapper = styled.div`
     }
   }
   .nav-icon:hover {
-    background-color: var(--primary-black);
+    background-color: var(--primary-white);
   }
 
   .nav-bg:hover {
@@ -73,6 +89,16 @@ const Wrapper = styled.div`
       /* display: block; */
       opacity: 1;
       font-size: 1.5rem;
+    }
+  }
+
+  .active {
+    .nav-icon {
+      /* border-bottom: 2px solid var(--primary-white); */
+      color: var(--primary-white);
+    }
+    .nav-icon:hover {
+      background: var(--primary-black);
     }
   }
 `;

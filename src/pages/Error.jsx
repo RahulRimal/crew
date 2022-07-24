@@ -5,7 +5,7 @@ import CenterContent from "../components/CenterContent";
 
 import { Row, Col } from "react-bootstrap";
 
-const Home = () => {
+const Error = () => {
   return (
     <>
       <Row className='m-0'>
@@ -23,4 +23,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Error;

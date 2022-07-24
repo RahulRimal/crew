@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 import LeftSidebar from "../components/LeftSidebar";
 import RightSidebar from "../components/RightSidebar";
 import CenterContent from "../components/CenterContent";
 
 import { Row, Col } from "react-bootstrap";
 
-const Home = () => {
+const Contact = () => {
   return (
     <>
       <Row className='m-0'>
@@ -21,6 +21,6 @@ const Home = () => {
       </Row>
     </>
   );
-};
+}
 
-export default Home;
+export default Contact
