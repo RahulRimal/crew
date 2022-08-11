@@ -4,11 +4,12 @@ import RightSidebar from "../components/RightSidebar";
 import CenterContent from "../components/CenterContent";
 
 import { Row, Col } from "react-bootstrap";
+import styled from "styled-components";
 
 const Home = () => {
   return (
-    <>
-      <Row className='m-0'>
+    <Wrapper>
+      {/* <Row className='m-0'>
         <Col xs={1} sm={1} md={2} className='d-none d-sm-block p-0'>
           <LeftSidebar />
         </Col>
@@ -18,9 +19,18 @@ const Home = () => {
         <Col xs={1} sm={1} md={2} className='d-none d-sm-block'>
           <RightSidebar />
         </Col>
-      </Row>
-    </>
+      </Row> */}
+      <div className="left-sidebar">
+        <LeftSidebar />
+      </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  .left-sidebar {
+    max-width: 25rem;
+  }
+`;
 
 export default Home;
